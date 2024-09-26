@@ -1,0 +1,25 @@
+.modal {
+  display: block;
+  visibility: hidden;
+}
+
+.modal-show {
+  visibility: visible;
+  background-color: rgba(169, 169, 169, 0.8);
+  transition: opacity 0.2s linear; 
+}
+
+.modal-dialog {
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.modal-content {
+  padding: 1.2em;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
