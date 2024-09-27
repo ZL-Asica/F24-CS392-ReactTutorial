@@ -1,14 +1,15 @@
 import React from 'react';
 import './CourseList.css';
 
-const CourseList = ({courses, selected, toggleSelected, selectedTerm }) => {
+const CourseList = ({ courses, selected, conflicts, toggleSelected, selectedTerm }) => {
   const filteredCourses = Object.entries(courses).filter(([key, course]) => course.term === selectedTerm);
 
   return (
     <div className="course-list">
       {filteredCourses.map(([key, course]) => (
         <div
-          className={`card m-2 p-2 shadow ${selected.includes(key) ? "selected" : ""}`}
+          className={`card m-2 p-2 shadow ${selected.includes(key) ? 'selected' : ''}
+                      ${conflicts.includes(key) ? 'conflict' : ''}`}
           key={key}
           onClick={() => toggleSelected(key)}
         >
@@ -21,6 +22,6 @@ const CourseList = ({courses, selected, toggleSelected, selectedTerm }) => {
       ))}
     </div>
   );
-}
+};
 
 export default CourseList;

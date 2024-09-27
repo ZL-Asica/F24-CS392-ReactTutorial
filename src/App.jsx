@@ -18,7 +18,7 @@ const Main = () => {
       <TermPage courses={schedule.courses} />
     </div>
   );
-}
+};
 
 const queryClient = new QueryClient();
 

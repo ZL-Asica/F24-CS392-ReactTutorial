@@ -11,6 +11,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.card:hover {
+  background-color: lightgrey;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
@@ -21,4 +25,13 @@
 .course-list .selected {
   background-color: lightgreen;
   color: darkgreen;
+}
+
+.course-list .conflict {
+  background-color: lightpink;
+  color: white;
+  cursor: not-allowed;
+}
+.course-list .conflict:hover {
+  background-color: lightcoral;
 }
