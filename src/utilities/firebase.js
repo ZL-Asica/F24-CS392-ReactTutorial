@@ -50,9 +50,14 @@ export const useDbUpdate = (path) => {
   const [result, setResult] = useState();
   const updateData = useCallback((value) => {
     update(ref(database, path), value)
-      .then(() => setResult(makeResult()))
+      .then(
+        () => setResult(makeResult()),
+        console.log(value)
+      )
       .catch((error) => setResult(makeResult(error)))
   }, [database, path]);
+
+  console.log(result);
 
   return [updateData, result];
 };

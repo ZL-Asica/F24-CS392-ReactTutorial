@@ -11,7 +11,7 @@ const CourseFormWrapper = ({ courses }) => {
   const { courseId } = useParams(); // Get the courseId from the URL
   const course = courses[courseId];
 
-  return <CourseForm course={course} />;
+  return <CourseForm course={course} courseId={courseId} />;
 };
 
 const Main = () => {
