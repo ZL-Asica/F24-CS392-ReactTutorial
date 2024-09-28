@@ -4,7 +4,7 @@ import CourseList from './CourseList';
 import ScheduleModal from './ScheduleModal';
 import { hasConflict } from '../utilities/timeUtils';
 
-const TermPage = ({ courses }) => {
+const TermPage = ({ courses, user }) => {
   const [selectedTerm, setSelectedTerm] = useState('Fall');
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [conflictingCourses, setConflictingCourses] = useState([]);
@@ -54,6 +54,7 @@ const TermPage = ({ courses }) => {
         conflicts={conflictingCourses}
         toggleSelected={toggleSelected}
         selectedTerm={selectedTerm}
+        user={user}
       />
     </div>
   );
