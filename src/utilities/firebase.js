@@ -93,3 +93,10 @@ export const useAuthState = () => {
 
   return [user];
 };
+
+export const useProfile = () => {
+  const [user] = useAuthState();
+  // if admins contains the user's uid, they are an admin, otherwise they are a guest
+  const [isAdmin, error] = useDbData(`/admins/${user?.uid || 'guest'}`);
+  return [{ user, isAdmin }, error];
+};
